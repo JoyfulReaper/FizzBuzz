@@ -47,7 +47,7 @@
                         <a class="nav-link" href="./code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/JoyfulReaper">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/JoyfulReaper/FizzBuzz">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://kgivler.com">About</a>
@@ -60,7 +60,42 @@
     <!-- Main Section -->
     <main class="flex-shrink-0">
         <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col-lg-4 col">
+                    <div class="row border-bottom border-2">
+                        <h1 class="display-5 logoFont">FizzBuzz: A coding Project</h1>
+                        <h4 class="lead">
+                            When it counts you Fizz Buzz. A JavaScript coding exercise using loops. Write a program that
+                        prints the numbers from 1 to 100 and for multiples of '3' display "Fizz" instead of the number and for multiples
+                        of '5' display "Buzz." If the number is a multiple of both display "FizzBuzz."
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <h2 class="mt-2">Instructions</h2>
+                        <p>
+                            Enter a fizz and a buzz value. Press the button and the values will appear.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col">
+                    <h5>Enter Values</h5>
+                    <form class="row gy-2 gx-3">
+                        <div class="col">
+                            <input id="fizz" class="form-control" type="number" placeholder="Fizz" value="3">
+                        </div>
+                        <div class="col">
+                            <input id="buzz" class="form-control" type="number" placeholder="Buzz" value="5">
+                        </div>
+                        <div class="col-12 d-flex justify-content-end">
+                            <button id="btnSubmit" type="button" class="btn btn-dark btn-large">FizzBuzz it</button>
+                        </div>
+                    </form>
 
+                    <div class="col-12">
+                        <h2>Results</h2>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

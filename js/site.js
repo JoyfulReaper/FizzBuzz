@@ -10,7 +10,10 @@ function getInput() {
         return;
     }
 
-    let results = generateResult(fizz, buzz, 100)
+    //let results = generateResult(fizz, buzz, 100);
+    //let results = generateResultB(fizz, buzz, 100);
+    let results = generateResultC(fizz, buzz, 100);
+
     displayResults(results);
 }
 
@@ -27,6 +30,52 @@ function generateResult(fizz, buzz, max) {
         } else {
             output.push(i);
         }
+    }
+
+    return output;
+}
+
+function generateResultB(fizz, buzz, max)
+{
+    let output = [];
+    let isFizz = false;
+    let isBuzz = false;
+
+    for(let i = 1; i <= max; i++) {
+        isFizz = i % fizz == 0;
+        isBuzz = i % buzz == 0;
+
+        switch(true)
+        {
+            case isFizz && isBuzz: {
+                output.push("FizzBuzz");
+                break;
+            }
+            case isFizz: {
+                output.push("Fizz");
+                break
+            }
+            case isBuzz: {
+                output.push("Buzz")
+                break;
+            }
+            default: {
+                output.push(i);
+                break;
+            }
+        }
+    }
+
+    return output;
+}
+
+function generateResultC(fizz, buzz, max)
+{
+    let output = [];
+    // Empty strings evaluate to false.
+    for(let i = 1; i <= max; i++) {
+        output.push( ( (i % fizz == 0  ? 'Fizz' : '') + 
+            ( i % buzz == 0 ? 'Buzz' : '' ) || i ) ); 
     }
 
     return output;

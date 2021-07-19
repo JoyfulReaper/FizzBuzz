@@ -36,6 +36,19 @@ main>.container {
     padding: 60px 15px 0;
 }
 
+.Fizz {
+    color: green;
+}
+
+.FizzBuzz {
+    color: red;
+    font-weight: bold;
+}
+
+.Buzz {
+    color: blue;
+}
+
 .bsicon{
     color: purple;
 }

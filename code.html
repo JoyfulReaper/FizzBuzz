@@ -66,17 +66,87 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                            // Call HelloWorld
-
-                            function HelloWorld() {
-                                alert("Hello World!");
+                        function getInput() {
+                            let fizz = document.getElementById("fizz").value;
+                            let buzz = document.getElementById("buzz").value;
+                        
+                            fizz = parseInt(fizz);
+                            buzz = parseInt(buzz);
+                        
+                            if(!Number.isInteger(fizz) || !Number.isInteger(buzz)) {
+                                alert("You must enter integers!");
+                                return;
                             }
+                        
+                            let results = generateResult(fizz, buzz, 100)
+                            displayResults(results);
+                        }
+                        
+                        function generateResult(fizz, buzz, max) {
+                            let output = [];
+                        
+                            for(let i = 1; i <= max; i++) {
+                                if(i % fizz == 0 && i % buzz == 0) {
+                                    output.push("FizzBuzz");
+                                } else if (i % fizz == 0) {
+                                    output.push("Fizz");
+                                } else if (i % buzz == 0) {
+                                    output.push("Buzz");
+                                } else {
+                                    output.push(i);
+                                }
+                            }
+                        
+                            return output;
+                        }
+                        
+                        function displayResults(results) {
+                            let templateRows = "";
+                        
+                            for(let i = 0; i < results.length; i++) {
+                                let className = "";
+                        
+                                if(!Number.isInteger(results[i])) {
+                                    className = ` class="${results[i]}"`;
+                                }
+                        
+                                if(i == 0 || templateRows.endsWith("</tr>"))
+                                {
+                                    // strings with HTML don't render correctly, see GitHub for the code
+                                    templateRows += "<tr>"
+                                }
+                                // strings with HTML don't render correctly, see GitHub for the code
+                                templateRows += `<td${className}>${results[i]}</td>`;
+                        
+                                if((i + 1) % 5 == 0)
+                                {
+                                    // strings with HTML don't render correctly, see GitHub for the code
+                                    templateRows += "</tr>"
+                                }
+                            }
+                        
+                            document.getElementById("results").innerHTML = templateRows;
+                        }
                         </code></pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>HelloWorld is a function that displays and alert with a message of "Hello World!"</p>
+                    <p><span class="logoFont fw-bold">FizzBuzz</span> is a classic coding challenge. Here is my solution in JavaScript.
+                        We prompt for the fizz and buzz values. If a number is divisible by the fizz value we output <span class="Fizz">'Fizz'</span>, if it is divisible by
+                        the buzz value we output <span class="Buzz">'Buzz.'</span> If the number is divisible by both we output <span class="FizzBuzz">'FizzBuzz'</span>, otherwise we output the original number. 
+                    </p>
+                    <h5>getInput()</h5>
+                    <p>
+                        In this function we use the JavaScript document API to read the input for the Fizz and Buzz values that the user input in the form.
+                        Then we call generateResult() to build an array with 'Fizz', 'Buzz', 'FizzBuzz' or the next number. Finally we call displayOutput() to show the results in a table.
+                    </p>
+                    <h5>generateResult()</h5>
+                    <p>
+                        In this function we build then return an array with the <span class="FizzBuzz">FizzBuzz</span> results.
+                    </p>
+                    <h5>displayResults()</h5>
+                    <p>
+                        In this function we use the JavaScript document API to insert the a table with the results after building up the HTML needed to display them.
+                    </p>
                 </div>
             </div>
         </div>

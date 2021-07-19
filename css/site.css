@@ -52,6 +52,10 @@ main>.container {
     color:rgb(11, 82, 214)
 }
 
+.logoFont {
+    font-family: 'Zen Tokyo Zoo', cursive;
+}
+
 .checklist >li i {
     color: var(--secondary-color);
 }

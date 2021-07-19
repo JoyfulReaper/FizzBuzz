@@ -37,7 +37,7 @@ main>.container {
 }
 
 .Fizz {
-    color: green;
+    color: darkgreen;
 }
 
 .FizzBuzz {
@@ -46,7 +46,7 @@ main>.container {
 }
 
 .Buzz {
-    color: blue;
+    color: darkblue;
 }
 
 .bsicon{

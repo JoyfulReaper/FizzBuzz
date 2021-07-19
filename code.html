@@ -101,8 +101,32 @@
                         }
                         
                         function displayResults(results) {
-                            let templateRows = "";
+                            let tableBody = document.getElementById("results");
+                            let templateRow = document.getElementById("tableTemplate");
                         
+                            tableBody.innerHTML = "";
+                        
+                            let numCols = document.importNode(templateRow.content, true)
+                                .querySelectorAll("td").length;
+                        
+                            for(let i = 0; i < results.length; i += numCols) {
+                                let tableRow = document.importNode(templateRow.content, true);
+                        
+                                let rowCols = tableRow.querySelectorAll("td");
+                                for(let j = 0; j < rowCols.length; j++)
+                                {
+                                    if(!Number.isInteger(results[i + j])) {
+                                        rowCols[j].classList.add(results[i + j])
+                                    }
+                                    rowCols[j].textContent = results[i + j]
+                                }
+                        
+                                tableBody.appendChild(tableRow);
+                            }
+                        
+                            // Original/Alternate Solution:
+                            /*     
+                            let templateRows = "";
                             for(let i = 0; i < results.length; i++) {
                                 let className = "";
                         
@@ -124,8 +148,8 @@
                                     templateRows += "</tr>"
                                 }
                             }
-                        
-                            document.getElementById("results").innerHTML = templateRows;
+                            document.getElementById("results").innerHTML = templateRows; 
+                            */
                         }
                         </code></pre>
                 </div>

@@ -173,7 +173,7 @@
                                 tableBody.appendChild(tableRow);
                             }
                         
-                            // Original/Alternate Solution:
+                            // Alternate Solution:
                             /*     
                             let templateRows = "";
                             for(let i = 0; i < results.length; i++) {
@@ -214,11 +214,25 @@
                     </p>
                     <h5>generateResult()</h5>
                     <p>
-                        In this function we build then return an array with the <span class="FizzBuzz">FizzBuzz</span> results.
+                        In this function we build then return an array with the <span class="FizzBuzz">FizzBuzz</span> results. The results are obtained using an if/else ladder and modulus division.
+                    </p>
+                    <h5>generateResultB()</h5>
+                    <p>
+                        In this function we build then return an array with the <span class="FizzBuzz">FizzBuzz</span> results using an alternate solution. The results are obtained by checking if the current value is
+                        evenly divisble by the fizz or buzz values, then using a switch statement to add the result to the output array.
+                    </p>
+                    <h5>generateResultC()</h5>
+                    <p>
+                        In this function we build then return an array with the <span class="FizzBuzz">FizzBuzz</span> results using an alternate solution. The results are obtained by using the ternary operator to check if
+                        the current number is divisible by the fizz value, this is concatenated with the results of checking if the current number is divisible with the buzz value. Either the word "Fizz", "Buzz" or an empty string results.
+                        This will result in "Fizz", "Buzz", "FizzBuzz" or 
+                        an empty string literal. The OR operator then compares the boolean result (an empty string literal is false) of the FizzBuzz concatenatation and the current value. If the left hand side is false, due to an empty string,
+                        then the right hand side will be true (since in JavaScript any integer with a positive falue is regarded as being true).
                     </p>
                     <h5>displayResults()</h5>
                     <p>
-                        In this function we use the JavaScript document API to insert the a table with the results after building up the HTML needed to display them.
+                        In this function we use the JavaScript document API to insert the a table with the results after building up the HTML needed to display them, with the help of a template tag. The commented out solution builds the HTML output
+                        without the use of a HTML template tag.
                     </p>
                 </div>
             </div>
